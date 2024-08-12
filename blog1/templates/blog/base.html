@@ -213,14 +213,14 @@
             <ul class="nav-list">
 
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-links" href="{% url 'post-create' %}"
-                        style="position: relative; top: 7px; font-size: large; font-family:'Times New Roman', Times, serif;">
-                        New Post </a></li>
-                <li class="nav-item"><a class="nav-links" href="{% url 'profile' %}"
-                        style="position: relative; top: 7px; font-size: large; font-family:'Times New Roman', Times, serif;">Account-Details</a></li>
                 <li class="nav-item"><a class="nav-links" href="{% url 'logout' %}"
                         style="position: relative; top: 7px; font-size: large; font-family:'Times New Roman', Times, serif;">Logout</a>
                 </li>
+                <li class="nav-item"><a class="nav-links" href="{% url 'profile' %}"
+                        style="position: relative; top: 7px; font-size: large; font-family:'Times New Roman', Times, serif;">Account-Details</a></li>
+                <li class="nav-item"><a class="nav-links" href="{% url 'post-create' %}"
+                        style="position: relative; top: 7px; font-size: large; font-family:'Times New Roman', Times, serif;">
+                        New Post </a></li>
                 {% else %}
                 <li class="nav-item"><a class="nav-links" href="{% url 'login' %}"
                         style="position: relative; top: 7px; font-size: large; font-family:'Times New Roman', Times, serif;">Login</a>

@@ -1,0 +1,14 @@
+.boxx
+{
+    margin-top: 40px;
+    margin: 2px solid gray;
+    background-image: url('/media/dance.webp');
+    background-position: 30px 30px;
+}
+.brox
+{
+    background-color: white;
+    width: 50%;
+    border-top-right-radius: 700px;
+    border-bottom-right-radius: 700px;
+}

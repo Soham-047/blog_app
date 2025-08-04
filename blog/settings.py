@@ -104,21 +104,18 @@ DATABASES = {
     }
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'neondb',
-        'USER': 'neondb_owner',
-        'PASSWORD': 'npg_8FdIwi1KcgTV',
-        'HOST': 'ep-winter-bird-a1pcahjs-pooler.ap-southeast-1.aws.neon.tech',
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'verify-full',
-            'options': '-c channel_binding=require'
-        },
-    }
-}
+DATABASE_URL = (
+  'postgresql://neondb_owner:npg_8FdIwi1KcgTV@ep-winter-bird-a1pcahjs-pooler.ap-southeast-1.aws.neon.tech/neondb'
+  '?sslmode=require&channel_binding=require'
+)
 
+DATABASES = {
+  'default': dj_database_url.parse(
+       DATABASE_URL,
+       conn_max_age=600,
+       conn_health_checks=True,
+  ),
+}
 
 
 # Password validation

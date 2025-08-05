@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'soham-m12r34i56tkr6788'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -104,17 +104,15 @@ DATABASES = {
     }
 }
 
-DATABASE_URL = (
-  'postgresql://neondb_owner:npg_8FdIwi1KcgTV@ep-winter-bird-a1pcahjs-pooler.ap-southeast-1.aws.neon.tech/neondb'
-  '?sslmode=require&channel_binding=require'
-)
+# DATABASE_URL = (
+#   'postgresql://neondb_owner:npg_8FdIwi1KcgTV@ep-winter-bird-a1pcahjs-pooler.ap-southeast-1.aws.neon.tech/neondb'
+#   '?sslmode=require&channel_binding=require'
+# )
 
 DATABASES = {
-  'default': dj_database_url.parse(
-       DATABASE_URL,
-       conn_max_age=600,
-       conn_health_checks=True,
-  ),
+    'default': dj_database_url.config(
+        default='postgresql://neondb_owner:npg_8FdIwi1KcgTV@ep-winter-bird-a1pcahjs-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+    )
 }
 
 
